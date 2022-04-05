@@ -42,19 +42,6 @@ class FormSinhVien extends Component {
                 errorsMasage = name + 'Không đúng định dạng '
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Cập nhật giá trị values
         let values ={...this.state.values, [name]:value}
         let errors = {...this.state.errors,[name]:errorsMasage}
