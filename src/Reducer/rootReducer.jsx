@@ -1,7 +1,9 @@
-import {combineReducers} from 'redux';
-import {QuanlynhansuReducer} from './QuanlynhansuReducer'
+import { QuanLySinhVienReducer } from "./QuanlynhansuReducer";
+import {combineReducers} from 'redux'
 
 
+
+//store ung dung
 export const rootReducer = combineReducers({
-    QuanlynhansuReducer:QuanlynhansuReducer
+    QuanLySinhVienReducer
 })
