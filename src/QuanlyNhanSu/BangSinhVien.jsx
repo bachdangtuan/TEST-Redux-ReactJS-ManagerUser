@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-class TableSinhvien extends Component {
+class BangSinhVien extends Component {
 
   
    renderSP = () =>{
@@ -46,4 +46,4 @@ const mapStateToProps = (state) => {
         mangSinhVien: state.QuanLySinhVienReducer.mangSinhVien
     }
 }
-export default connect(mapStateToProps,null)(TableSinhvien)
+export default connect(mapStateToProps,null)(BangSinhVien)
