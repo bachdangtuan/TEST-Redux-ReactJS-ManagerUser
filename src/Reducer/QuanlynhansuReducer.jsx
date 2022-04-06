@@ -1,27 +1,30 @@
 
 
 const stateDefault = {
-    mangSinhVien:[
-            {
-                maSV:1,
-                hoTen:'Nguyen Van A',
-                soDienThoai: '091321233',
-                email:'abcd@gmail.com'
-            }
+    mangSinhVien: [
     ]
 }
 
-export const QuanLySinhVienReducer = (state = stateDefault, action) =>{
+export const QuanLySinhVienReducer = (state = stateDefault, action) => {
     switch (action.type) {
         case 'THEM_SINH_VIEN': {
             let mangSinhVienUpdate = [...state.mangSinhVien]
             //Thêm dữ liệu từ ô input vào mangSinhVien
             mangSinhVienUpdate = [...state.mangSinhVien, action.sinhvien]
             state.mangSinhVien = mangSinhVienUpdate
-            return {...state}
-        }   break;
+            return { ...state }
+        } break;
+        case 'XOA_SINH_VIEN': {
+            //Sao chép lại mảng sinh viên
+            let mangSinhVienUpdate = [...state.mangSinhVien]
+            // Xóa theo Index phần tử trong mảng
+            mangSinhVienUpdate.splice(action.index, 1)
+            state.mangSinhVien = mangSinhVienUpdate
+            return { ...state }
+        } break;
+
         default:
-            return {...state}
+            return { ...state }
             break;
-        }
+    }
 }

@@ -13,10 +13,15 @@ class BangSinhVien extends Component {
                     <td>{sp.hoTen}</td>
                     <td>{sp.soDienThoai}</td>
                     <td>{sp.email}</td>
+                    <td>
+                        <button className='btn btn-danger' onClick={() =>{this.props.xoaSinhVien(index)}}>Xóa</button>
+                        <button className='btn btn-primary ml-2'>Sửa</button>
+                    </td>
                 </tr>
             )
        })
    } 
+
 
   render() {
       console.log(this.props.mangSinhVien);
@@ -29,6 +34,7 @@ class BangSinhVien extends Component {
                       <th>Họ Tên</th>
                       <th>Số Điện Thoại</th>
                       <th>Email</th>
+                      <th>Chức Năng</th>
                   </tr>
               </thead>
               <tbody>
@@ -46,4 +52,16 @@ const mapStateToProps = (state) => {
         mangSinhVien: state.QuanLySinhVienReducer.mangSinhVien
     }
 }
-export default connect(mapStateToProps,null)(BangSinhVien)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        xoaSinhVien: (index) => {
+            const action = {
+                type: 'XOA_SINH_VIEN',
+                index
+            }
+            console.log('action',action);
+            dispatch(action)
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(BangSinhVien)
