@@ -16,7 +16,6 @@ class BangSinhVien extends Component {
                     <td>{sp.email}</td>
                     <td>
                         <button className='btn btn-danger' onClick={() => { this.props.xoaSinhVien(index) }}>Xóa</button>
-                        <button className='btn btn-primary ml-2' onClick={() => { this.props.xoaSinhVien(index) }}>Sửa</button>
                     </td>
                 </tr>
             )
