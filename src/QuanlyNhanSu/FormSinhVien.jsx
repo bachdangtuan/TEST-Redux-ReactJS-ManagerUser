@@ -22,45 +22,51 @@ class FormSinhVien extends Component {
         // Lấy giá trị mỗi lần value input thay đổi bởi người dùng
         console.log("event target", event.target);
         let tagInput = event.target;
-        let { name, value, type} = tagInput
+        let { name, value, type } = tagInput
         let errorsMasage = '';
-        
+
         // KIỂM TRA RỖNG CHO CÁC Ô INPUT
 
 
         // if (value.trim() === '') { 
         //     errorsMasage = name + '' + 'Không được bỏ trống !'
         // }
-        
-        (value.trim() === '')?( errorsMasage = name + '' + 'Không được bỏ trống !') :(errorsMasage = errorsMasage ) //Viết theo toán tử 3 ngôi
+
+        (value.trim() === '') ? (errorsMasage = name + '' + 'Không được bỏ trống !') : (errorsMasage = errorsMasage) //Viết theo toán tử 3 ngôi
 
         // KIỂM TRA EMAIL
 
         if (type === 'email') {
             const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (!regex.test(value)){
+            if (!regex.test(value)) {
                 errorsMasage = name + 'Không đúng định dạng '
             }
         }
         // Cập nhật giá trị values
-        let values ={...this.state.values, [name]:value}
-        let errors = {...this.state.errors,[name]:errorsMasage}
+        let values = { ...this.state.values, [name]: value }
+        let errors = { ...this.state.errors, [name]: errorsMasage }
 
-        this.setState ({
-            values:values,
-            errors:errors
+        this.setState({
+            values: values,
+            errors: errors
         })
 
-
-        // this.setState ({
-        //     [name]:value
-        // }, () => {
-        //     //Log state kiểm tra state thay đổi
-        //     console.log('new state',this.state);
-        // })
     }
     handleSubmit = (event) => {
         event.preventDefault();
+        let { values,errors } = this.state;
+        for (const key in values) {
+            if (values[key] === '') {
+                alert('thiếu thông tin')
+                return;
+            }
+        }
+        for (const key in errors) {
+            if (errors[key] !== '') {
+                alert('thiếu thông tin')
+                return;
+            }
+        }
         this.props.themSinhVien(this.state.values)
     }
 

@@ -9,13 +9,14 @@ class BangSinhVien extends Component {
         return mangSinhVien.map((sp, index) => {
             return (
                 <tr key={index}>
+                    <td>{index + 1}</td>
                     <td>{sp.maSV}</td>
                     <td>{sp.hoTen}</td>
                     <td>{sp.soDienThoai}</td>
                     <td>{sp.email}</td>
                     <td>
                         <button className='btn btn-danger' onClick={() => { this.props.xoaSinhVien(index) }}>Xóa</button>
-             
+                        <button className='btn btn-primary ml-2' onClick={() => { this.props.xoaSinhVien(index) }}>Sửa</button>
                     </td>
                 </tr>
             )
@@ -30,6 +31,7 @@ class BangSinhVien extends Component {
                 <table className="table">
                     <thead>
                         <tr className='bg-dark text-white'>
+                            <th>Số Thứ Tự</th>
                             <th>Mã Sinh Viên</th>
                             <th>Họ Tên</th>
                             <th>Số Điện Thoại</th>
