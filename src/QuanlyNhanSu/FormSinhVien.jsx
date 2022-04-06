@@ -122,4 +122,11 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-export default connect(null, mapDispatchToProps)(FormSinhVien)
+
+// Lấy người dùng sửa từ redux về
+const mapStateToProps = (state) => {
+    return {
+        sinhVienSua: state.QuanLySinhVienReducer.sinhVienSua
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(FormSinhVien)

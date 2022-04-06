@@ -2,7 +2,15 @@
 
 const stateDefault = {
     mangSinhVien: [
-    ]
+    ],
+    sinhVienSua:{
+
+            maSV: '123',
+            hoTen: 'Nguyen Van C',
+            soDienThoai: '02834855',
+            email: 'jdhfjhsd@gmail.com'
+       
+    }
 }
 
 export const QuanLySinhVienReducer = (state = stateDefault, action) => {
@@ -14,6 +22,7 @@ export const QuanLySinhVienReducer = (state = stateDefault, action) => {
             state.mangSinhVien = mangSinhVienUpdate
             return { ...state }
         } break;
+
         case 'XOA_SINH_VIEN': {
             //Sao chép lại mảng sinh viên
             let mangSinhVienUpdate = [...state.mangSinhVien]
@@ -22,6 +31,9 @@ export const QuanLySinhVienReducer = (state = stateDefault, action) => {
             state.mangSinhVien = mangSinhVienUpdate
             return { ...state }
         } break;
+
+
+
 
         default:
             return { ...state }
