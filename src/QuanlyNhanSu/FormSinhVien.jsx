@@ -82,24 +82,24 @@ class FormSinhVien extends Component {
                             <div className="row">
                                 <div className="form-group col-6">
                                     <span>Mã Sinh Viên</span>
-                                    <input className='form-control' name='maSV' value={this.state.values.maSV} onChange={this.handleChange} ></input>
+                                    <input className='form-control' name='maSV' onChange={this.handleChange} ></input>
                                     <span className='text-danger'> {this.state.errors.maSV}</span>
                                 </div>
                                 <div className="form-group col-6">
                                     <span>Họ Tên</span>
-                                    <input className='form-control' name='hoTen' value={this.state.values.hoTen} onChange={this.handleChange}></input>
+                                    <input className='form-control' name='hoTen' onChange={this.handleChange}></input>
                                     <span className='text-danger'> {this.state.errors.hoTen}</span>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="form-group col-6">
                                     <span>Điện Thoại Sinh Viên</span>
-                                    <input className='form-control' name='soDienThoai' value={this.state.values.soDienThoai} onChange={this.handleChange}></input>
+                                    <input className='form-control' name='soDienThoai' onChange={this.handleChange}></input>
                                     <span className='text-danger'> {this.state.errors.soDienThoai}</span>
                                 </div>
                                 <div className="form-group col-6">
                                     <span>Email Sinh Viên</span>
-                                    <input className='form-control' name='email' type='email' value={this.state.values.email} onChange={this.handleChange}></input>
+                                    <input className='form-control' name='email' type='email' onChange={this.handleChange}></input>
                                     <span className='text-danger'> {this.state.errors.email}</span>
                                 </div>
                             </div>
